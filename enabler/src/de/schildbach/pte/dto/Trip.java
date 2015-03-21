@@ -307,7 +307,10 @@ public final class Trip implements Serializable
 		public final Stop arrivalStop;
 		public final @Nullable List<Stop> intermediateStops;
 		public final @Nullable String message;
+		
+		//public Score score;
 		public double averageDelay;
+		public double historicDelay;
 
 		public Public(final Line line, final Location destination, final Stop departureStop, final Stop arrivalStop,
 				final List<Stop> intermediateStops, final List<Point> path, final String message)
