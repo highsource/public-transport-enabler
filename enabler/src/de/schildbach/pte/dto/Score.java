@@ -1,6 +1,9 @@
 package de.schildbach.pte.dto;
 
-public class Score {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class Score implements Serializable {
 
 	public double value;
 
@@ -13,5 +16,5 @@ public class Score {
 	public String toString() {
 		return "Score{value=" + value + "}";
 	}
-	
+
 }
