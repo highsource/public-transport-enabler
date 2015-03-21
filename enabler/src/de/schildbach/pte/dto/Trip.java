@@ -47,6 +47,7 @@ public final class Trip implements Serializable
 	public final List<Fare> fares;
 	public final int[] capacity;
 	public final Integer numChanges;
+	public double score;
 
 	public Trip(final String id, final Location from, final Location to, final List<Leg> legs, final List<Fare> fares, final int[] capacity,
 			final Integer numChanges)
@@ -305,6 +306,7 @@ public final class Trip implements Serializable
 		public final Stop arrivalStop;
 		public final @Nullable List<Stop> intermediateStops;
 		public final @Nullable String message;
+		public double averageDelay;
 
 		public Public(final Line line, final Location destination, final Stop departureStop, final Stop arrivalStop,
 				final List<Stop> intermediateStops, final List<Point> path, final String message)
