@@ -47,7 +47,7 @@ public final class Trip implements Serializable
 	public final List<Fare> fares;
 	public final int[] capacity;
 	public final Integer numChanges;
-	public double score;
+	public static Score score;
 
 	public Trip(final String id, final Location from, final Location to, final List<Leg> legs, final List<Fare> fares, final int[] capacity,
 			final Integer numChanges)
@@ -265,6 +265,7 @@ public final class Trip implements Serializable
 		helper.addValue(firstPublicLegDepartureTime != null ? String.format(Locale.US, "%ta %<tR", firstPublicLegDepartureTime) : "null" + '-'
 				+ lastPublicLegArrivalTime != null ? String.format(Locale.US, "%ta %<tR", lastPublicLegArrivalTime) : "null");
 		helper.add("numChanges", numChanges);
+		helper.add("score", score.toString());
 		return helper.toString();
 	}
 
@@ -391,7 +392,7 @@ public final class Trip implements Serializable
 		@Override
 		public String toString()
 		{
-			return MoreObjects.toStringHelper(this).add("line", line).add("destination", destination).add("departureStop", departureStop)
+			return MoreObjects.toStringHelper(this).add("line", line).add("averageDelay", averageDelay).add("destination", destination).add("departureStop", departureStop)
 					.add("arrivalStop", arrivalStop).omitNullValues().toString();
 		}
 	}
